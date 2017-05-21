@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_project_travel</string>
+    <string name="mdp_oublie"><u>Mot de passe oublié ?</u></string>
 </resources>
