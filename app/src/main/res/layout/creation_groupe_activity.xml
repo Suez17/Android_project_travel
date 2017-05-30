@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.michael.android_project_travel.CreationGroupeActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Créer groupe de voyage"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/nomGroupeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nomGroupeText"
+        android:layout_alignBottom="@+id/nomGroupeText"
+        android:layout_alignStart="@+id/textView3"
+        android:text="Nom groupe" />
+
+    <EditText
+        android:id="@+id/nomGroupeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="37dp"
+        android:layout_toEndOf="@+id/nomGroupeLabel"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/destinationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nomGroupeLabel"
+        android:layout_below="@+id/nomGroupeText"
+        android:layout_marginTop="29dp"
+        android:text="Destination" />
+
+    <Spinner
+        android:id="@+id/destinationCombo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/destinationLabel"
+        android:layout_alignStart="@+id/nomGroupeText"
+        android:layout_alignEnd="@+id/nomGroupeText" />
+
+    <TextView
+        android:id="@+id/periodeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/destinationLabel"
+        android:layout_below="@+id/destinationLabel"
+        android:layout_marginTop="41dp"
+        android:text="Période" />
+
+    <Spinner
+        android:id="@+id/periodeCombo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/periodeLabel"
+        android:layout_alignEnd="@+id/destinationCombo"
+        android:layout_alignStart="@+id/destinationCombo" />
+
+    <TextView
+        android:id="@+id/dureeVoyageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/periodeLabel"
+        android:layout_below="@+id/periodeLabel"
+        android:layout_marginTop="44dp"
+        android:text="Durée" />
+
+    <EditText
+        android:id="@+id/dureeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_alignBaseline="@+id/dureeVoyageLabel"
+        android:layout_alignBottom="@+id/dureeVoyageLabel"
+        android:layout_alignStart="@+id/nbVoyageurText" />
+
+    <TextView
+        android:id="@+id/nbVoyageurLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dureeVoyageLabel"
+        android:layout_below="@+id/dureeText"
+        android:layout_marginTop="40dp"
+        android:text="Nb voyageurs" />
+
+    <EditText
+        android:id="@+id/nbVoyageurText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/nbVoyageurLabel"
+        android:layout_alignBottom="@+id/nbVoyageurLabel"
+        android:layout_alignStart="@+id/periodeCombo" />
+
+    <Button
+        android:id="@+id/creerGroupeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/retourButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorGreen"
+        android:text="CREER GROUPE" />
+
+    <Button
+        android:id="@+id/retourButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorRed"
+        android:text="RETOUR" />
+</RelativeLayout>
