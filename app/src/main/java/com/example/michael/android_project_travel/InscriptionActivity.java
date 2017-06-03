@@ -32,12 +32,12 @@ public class InscriptionActivity extends AppCompatActivity {
 
     public void userReg(View view) {
         String nom = _nom.getText().toString();
-        String prenom = _nom.getText().toString();
-        String age = _nom.getText().toString();
-        String phone = _nom.getText().toString();
-        String ville = _nom.getText().toString();
-        String email = _nom.getText().toString();
-        String mdp = _nom.getText().toString();
+        String prenom =  _prenom.getText().toString();
+        String age =  _age.getText().toString();
+        String phone = _phone.getText().toString();
+        String ville = _ville.getText().toString();
+        String email = _email.getText().toString();
+        String mdp = _mdp.getText().toString();
         String pro = _pro.getText().toString();
         String part = _part.getText().toString();
 

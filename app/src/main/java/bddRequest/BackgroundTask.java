@@ -32,42 +32,35 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPreExecute() {
-        alertDialog = new AlertDialog.Builder(ctx).create();
-        alertDialog.setTitle("Login Information....");
     }
 
     @Override
     protected String doInBackground(String... params) {
-        String reg_url = "http://172.19.1.54:80/testbdandroid/register.php";
-        String login_url = "http://172.19.1.54:80/testbdandroid/login.php";
+        String reg_url = "http://192.168.0.17:8080/testbdandroid/register.php";
+        String login_url = "http://192.168.0.17:8080/testbdandroid/login.php";
         String method = params[0];
 
         if (method.equals("register")) {
-            /*String name = params[1];
-            String user_name = params[2];
-            String user_pass = params[3];*/
-
             try {
                 URL url = new URL(reg_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 //httpURLConnection.setDoInput(true);
+
                 OutputStream OS = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
 
                 String[] dataField = {"userLastname", "userFirstname", "userAge", "userPhone", "userCity", "userMail", "userPass"};
 
                 String data = "";
-                int i = 0;
+                int i;
                 for (i = 0; i < dataField.length; i++) {
-                    if (i == dataField.length - 1) data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
-                    data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8") + "&";
+                    data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
+                    if (i < dataField.length - 1) {
+                        data += "&";
+                    }
                 }
-
-                /*String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&" +
-                        URLEncoder.encode("user_name", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") + "&" +
-                        URLEncoder.encode("user_pass", "UTF-8") + "=" + URLEncoder.encode(user_pass, "UTF-8");*/
 
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
@@ -110,7 +103,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
                 String response = "";
-                String line = "";
+                String line;
 
                 while ((line = bufferedReader.readLine()) != null) {
                     response+= line;
@@ -136,18 +129,9 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onProgressUpdate(Void... values) {
-        super.onProgressUpdate(values);
     }
 
     @Override
     protected void onPostExecute(String result) {
-        if(result.equals("Registration Success...")) {
-            Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
-        }
-
-        else {
-            alertDialog.setMessage(result);
-            alertDialog.show();
-        }
     }
 }
