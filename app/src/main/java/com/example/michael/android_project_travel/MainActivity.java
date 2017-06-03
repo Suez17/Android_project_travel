@@ -10,6 +10,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.inscription_activity);
-        startActivity(new Intent(this, InscriptionActivity.class));
+        startActivity(new Intent(this, ConnexionActivity.class));
     }
 }

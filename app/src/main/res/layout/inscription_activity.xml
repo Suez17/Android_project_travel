@@ -53,7 +53,7 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:onClick="userReg" />
+        android:onClick="onClick" />
 
     <TextView
         android:id="@+id/villeLibelle"
@@ -183,6 +183,7 @@
         android:text="RETOUR"
         android:layout_below="@+id/validerInscription"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />/>
 
 </RelativeLayout>
