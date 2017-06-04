@@ -31,11 +31,13 @@ public class ConnexionActivity extends AppCompatActivity {
             case R.id.connexionButton :
                 intent = new Intent(this, AccueilActivity.class);
                 startActivity(intent);
+                finish();
                 break;
 
             case R.id.inscriptionButton :
                 intent = new Intent(this, CreateLoginActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
 

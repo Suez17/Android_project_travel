@@ -30,7 +30,7 @@ public class CreateLoginActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.nextButton :
                 String login = getLogin.getText().toString();
-                String pass =  getPass.getText().toString();
+                String pass = getPass.getText().toString();
                 String confirmPass = getConfirmPass.getText().toString();
 
                 if (pass.equals("") == false) {
@@ -39,6 +39,7 @@ public class CreateLoginActivity extends AppCompatActivity {
                         intent.putExtra("login", login);
                         intent.putExtra("pass", pass);
                         startActivity(intent);
+                        finish();
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         builder.setTitle("Alerte");
@@ -58,12 +59,12 @@ public class CreateLoginActivity extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
-
                 break;
 
             case R.id.retourButton :
                 intent = new Intent(this, ConnexionActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }

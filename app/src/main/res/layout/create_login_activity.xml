@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.michael.android_project_travel.InscriptionActivity">
+    tools:context="com.example.michael.android_project_travel.CreateLoginActivity">
 
     <TextView
         android:id="@+id/inscritpionLabel"
@@ -92,6 +92,6 @@
         android:layout_below="@+id/nextButton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onClick" />/>
+        android:onClick="onClick" />
 
 </RelativeLayout>

@@ -35,8 +35,8 @@ public class InscriptionActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.validerInscription :
                 String nom = getNom.getText().toString();
-                String prenom =  getPrenom.getText().toString();
-                String age =  getAge.getText().toString();
+                String prenom = getPrenom.getText().toString();
+                String age = getAge.getText().toString();
                 String phone = getPhone.getText().toString();
                 String ville = getVille.getText().toString();
                 String email = getEmail.getText().toString();
@@ -51,13 +51,12 @@ public class InscriptionActivity extends AppCompatActivity {
                 BackgroundTask backgroundTask = new BackgroundTask(this);
                 backgroundTask.execute(method, nom, prenom, age, phone, ville, email, login, pass);
                 finish();
-                intent = new Intent(this, ConnexionActivity.class);
-                startActivity(intent);
                 break;
 
             case R.id.retourButton :
                 intent = new Intent(this, CreateLoginActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }

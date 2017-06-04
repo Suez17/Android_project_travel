@@ -166,6 +166,6 @@
         android:layout_below="@+id/validerInscription"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onClick" />/>
+        android:onClick="onClick" />
 
 </RelativeLayout>

@@ -11,5 +11,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.inscription_activity);
         startActivity(new Intent(this, ConnexionActivity.class));
+        finish();
     }
 }
