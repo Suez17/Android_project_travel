@@ -11,7 +11,7 @@ import bddRequest.BackgroundTask;
 
 public class InscriptionActivity extends AppCompatActivity {
 
-    EditText getNom, getPrenom, getAge, getPhone, getVille, getEmail, getPass;
+    EditText getNom, getPrenom, getAge, getPhone, getVille, getEmail;
     RadioButton getPro, getPart;
 
     @Override
@@ -25,12 +25,13 @@ public class InscriptionActivity extends AppCompatActivity {
         getPhone = (EditText) findViewById(R.id.phoneText);
         getVille = (EditText) findViewById(R.id.villeText);
         getEmail = (EditText) findViewById(R.id.emailText);
-        getPass = (EditText) findViewById(R.id.mdpText);
         getPro = (RadioButton) findViewById(R.id.radioProfessionnel);
         getPart = (RadioButton) findViewById(R.id.radioParticulier);
     }
 
     public void onClick(View v) {
+        Intent intent;
+
         switch (v.getId()) {
             case R.id.validerInscription :
                 String nom = getNom.getText().toString();
@@ -39,18 +40,23 @@ public class InscriptionActivity extends AppCompatActivity {
                 String phone = getPhone.getText().toString();
                 String ville = getVille.getText().toString();
                 String email = getEmail.getText().toString();
-                String mdp = getPass.getText().toString();
                 String pro = getPro.getText().toString();
                 String part = getPart.getText().toString();
 
+                intent = getIntent();
+                String login = intent.getStringExtra("login");
+                String pass = intent.getStringExtra("pass");
+
                 String method = "register";
                 BackgroundTask backgroundTask = new BackgroundTask(this);
-                backgroundTask.execute(method, nom, prenom, age, phone, ville, email, mdp);
+                backgroundTask.execute(method, nom, prenom, age, phone, ville, email, login, pass);
                 finish();
+                intent = new Intent(this, ConnexionActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.retourButton :
-                Intent intent = new Intent(this, ConnexionActivity.class);
+                intent = new Intent(this, CreateLoginActivity.class);
                 startActivity(intent);
                 break;
         }

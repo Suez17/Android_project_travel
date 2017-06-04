@@ -21,9 +21,8 @@ import java.net.URLEncoder;
  * Created by fpite on 17/05/2017.
  */
 
-public class BackgroundTask extends AsyncTask<String,Void,String> {
+public class BackgroundTask extends AsyncTask <String, Void, String> {
 
-    AlertDialog alertDialog;
     Context ctx;
 
     public BackgroundTask(Context ctx) {
@@ -51,7 +50,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 OutputStream OS = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
 
-                String[] dataField = {"userLastname", "userFirstname", "userAge", "userPhone", "userCity", "userMail", "userPass"};
+                String[] dataField = {"userLastname", "userFirstname", "userAge", "userPhone", "userCity", "userMail", "userLogin", "userPass"};
 
                 String data = "";
                 int i;

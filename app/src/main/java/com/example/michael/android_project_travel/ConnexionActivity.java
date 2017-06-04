@@ -34,7 +34,7 @@ public class ConnexionActivity extends AppCompatActivity {
                 break;
 
             case R.id.inscriptionButton :
-                intent = new Intent(this, InscriptionActivity.class);
+                intent = new Intent(this, CreateLoginActivity.class);
                 startActivity(intent);
                 break;
         }

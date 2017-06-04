@@ -32,7 +32,7 @@
         android:text="Prénom"
         android:layout_alignBaseline="@+id/prenomText"
         android:layout_alignBottom="@+id/prenomText"
-        android:layout_alignStart="@+id/nomLabel" />
+        android:layout_alignEnd="@+id/nomLabel" />
 
     <TextView
         android:id="@+id/telephoneLabel"
@@ -41,7 +41,7 @@
         android:text="Mobile"
         android:layout_alignBaseline="@+id/phoneText"
         android:layout_alignBottom="@+id/phoneText"
-        android:layout_alignStart="@+id/mdpLabel" />
+        android:layout_alignEnd="@+id/nomLabel" />
 
     <Button
         android:id="@+id/validerInscription"
@@ -121,32 +121,14 @@
         android:layout_below="@+id/villeText"
         android:layout_alignStart="@+id/villeText" />
 
-    <TextView
-        android:id="@+id/mdpLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mdp"
-        android:layout_alignBaseline="@+id/mdpText"
-        android:layout_alignBottom="@+id/mdpText"
-        android:layout_alignEnd="@+id/nomLabel" />
-
-    <EditText
-        android:id="@+id/mdpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_below="@+id/emailText"
-        android:layout_alignStart="@+id/emailText" />
-
     <RadioButton
         android:id="@+id/radioParticulier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Particulier"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/mdpText"
-        android:layout_alignStart="@+id/mdpLabel" />
+        android:layout_below="@+id/emailText"
+        android:layout_alignStart="@+id/emailLabel" />
 
     <RadioButton
         android:id="@+id/radioProfessionnel"
@@ -155,7 +137,7 @@
         android:text="Professionnel"
         android:layout_alignBaseline="@+id/radioParticulier"
         android:layout_alignBottom="@+id/radioParticulier"
-        android:layout_alignEnd="@+id/mdpText" />
+        android:layout_alignEnd="@+id/emailText" />
 
     <TextView
         android:id="@+id/ageLabel"
@@ -164,7 +146,7 @@
         android:text="Age"
         android:layout_alignBaseline="@+id/ageText"
         android:layout_alignBottom="@+id/ageText"
-        android:layout_alignStart="@+id/prenomLabel" />
+        android:layout_alignStart="@+id/telephoneLabel" />
 
     <EditText
         android:id="@+id/ageText"

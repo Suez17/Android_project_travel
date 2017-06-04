@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.michael.android_project_travel.InscriptionActivity">
+
+    <TextView
+        android:id="@+id/inscritpionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inscription"
+        android:textSize="36sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/loginLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="28dp"
+        android:text="Login"
+        android:layout_below="@+id/inscritpionLabel"
+        android:layout_toStartOf="@+id/loginText" />
+
+    <TextView
+        android:id="@+id/passLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mot de passe"
+        android:layout_alignBaseline="@+id/passText"
+        android:layout_alignBottom="@+id/passText"
+        android:layout_toStartOf="@+id/passText" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUIVANT"
+        android:background="@color/colorGreen"
+        android:layout_below="@+id/confirmPassText"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
+
+    <EditText
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/loginLabel"
+        android:layout_alignBottom="@+id/loginLabel"
+        android:layout_alignStart="@+id/inscritpionLabel" />
+
+    <EditText
+        android:id="@+id/passText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_below="@+id/loginText"
+        android:layout_alignStart="@+id/loginText" />
+
+    <TextView
+        android:id="@+id/confirmPassLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmer"
+        android:layout_alignBaseline="@+id/confirmPassText"
+        android:layout_alignBottom="@+id/confirmPassText"
+        android:layout_alignEnd="@+id/passLabel" />
+
+    <EditText
+        android:id="@+id/confirmPassText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_below="@+id/passText"
+        android:layout_alignStart="@+id/passText" />
+
+    <Button
+        android:id="@+id/retourButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:text="RETOUR"
+        android:layout_below="@+id/nextButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />/>
+
+</RelativeLayout>
