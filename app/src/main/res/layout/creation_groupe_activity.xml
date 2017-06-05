@@ -41,10 +41,10 @@
         android:id="@+id/destinationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/nomGroupeLabel"
+        android:layout_marginTop="18dp"
+        android:text="Destination"
         android:layout_below="@+id/nomGroupeText"
-        android:layout_marginTop="29dp"
-        android:text="Destination" />
+        android:layout_alignStart="@+id/nomGroupeLabel" />
 
     <Spinner
         android:id="@+id/destinationCombo"
@@ -55,30 +55,22 @@
         android:layout_alignEnd="@+id/nomGroupeText" />
 
     <TextView
-        android:id="@+id/periodeLabel"
+        android:id="@+id/dateDebutLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Date début"
+        android:layout_above="@+id/editText2"
         android:layout_alignStart="@+id/destinationLabel"
-        android:layout_below="@+id/destinationLabel"
-        android:layout_marginTop="41dp"
-        android:text="Période" />
-
-    <Spinner
-        android:id="@+id/periodeCombo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/periodeLabel"
-        android:layout_alignEnd="@+id/destinationCombo"
-        android:layout_alignStart="@+id/destinationCombo" />
+        android:layout_marginBottom="26dp" />
 
     <TextView
         android:id="@+id/dureeVoyageLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/periodeLabel"
-        android:layout_below="@+id/periodeLabel"
-        android:layout_marginTop="44dp"
-        android:text="Durée" />
+        android:text="Durée"
+        android:layout_alignBaseline="@+id/dureeText"
+        android:layout_alignBottom="@+id/dureeText"
+        android:layout_alignStart="@+id/dateFinLabel" />
 
     <EditText
         android:id="@+id/dureeText"
@@ -86,18 +78,17 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:layout_alignBaseline="@+id/dureeVoyageLabel"
-        android:layout_alignBottom="@+id/dureeVoyageLabel"
-        android:layout_alignStart="@+id/nbVoyageurText" />
+        android:layout_above="@+id/nbVoyageurText"
+        android:layout_alignStart="@+id/destinationCombo" />
 
     <TextView
         android:id="@+id/nbVoyageurLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Nb voyageurs"
+        android:layout_above="@+id/creerGroupeButton"
         android:layout_alignStart="@+id/dureeVoyageLabel"
-        android:layout_below="@+id/dureeText"
-        android:layout_marginTop="40dp"
-        android:text="Nb voyageurs" />
+        android:layout_marginBottom="30dp" />
 
     <EditText
         android:id="@+id/nbVoyageurText"
@@ -107,7 +98,7 @@
         android:inputType="number"
         android:layout_alignBaseline="@+id/nbVoyageurLabel"
         android:layout_alignBottom="@+id/nbVoyageurLabel"
-        android:layout_alignStart="@+id/periodeCombo" />
+        android:layout_alignStart="@+id/dureeText" />
 
     <Button
         android:id="@+id/creerGroupeButton"
@@ -129,4 +120,32 @@
         android:layout_marginBottom="20dp"
         android:background="@color/colorRed"
         android:text="RETOUR" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_alignBaseline="@+id/dateDebutLabel"
+        android:layout_alignBottom="@+id/dateDebutLabel"
+        android:layout_alignStart="@+id/destinationCombo" />
+
+    <TextView
+        android:id="@+id/dateFinLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date fin"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignStart="@+id/dateDebutLabel" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/editText" />
 </RelativeLayout>

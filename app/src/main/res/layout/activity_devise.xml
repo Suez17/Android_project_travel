@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.michael.android_project_travel.DeviseActivity">
+
+    <TextView
+        android:id="@+id/labelConvertisseur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Convertisseur de devise"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/deviseRefLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Devise référente :"
+        android:layout_marginStart="14dp"
+        android:layout_below="@+id/labelConvertisseur"
+        android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/conversionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="47dp"
+            android:layout_weight="1"
+            android:text="Conversion :"
+            android:layout_below="@+id/montantText"
+            android:layout_alignStart="@+id/montantLabel" />
+
+        <Spinner
+            android:id="@+id/deviseListConv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/conversionLabel"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+        android:id="@+id/listDeviseRef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/deviseRefLabel"
+            android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/montantLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Montant :"
+        android:layout_below="@+id/listDeviseRef"
+        android:layout_alignStart="@+id/deviseRefLabel" />
+
+    <EditText
+        android:id="@+id/montantText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/montantLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/montantLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/conversionLabel"
+        android:layout_below="@+id/deviseListConv"
+        android:layout_marginTop="14dp"
+        android:text="Montant :" />
+
+    <EditText
+        android:id="@+id/montantConversionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/montantText"
+        android:layout_below="@+id/montantLabel1"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:background="@color/colorRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/montantConversionText"
+        android:layout_marginTop="26dp"
+        android:text="RETOUR" />
+
+</RelativeLayout>
