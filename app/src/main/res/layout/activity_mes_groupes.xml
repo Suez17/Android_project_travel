@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.michael.android_project_travel.MesGroupesActivity">
 
-
     <Button
         android:id="@+id/ajouterGroupe"
         android:layout_width="wrap_content"
@@ -14,5 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
-        android:text="Ajouter groupe" />
+        android:text="Ajouter groupe"
+        android:onClick="onClick" />
+
 </RelativeLayout>

@@ -62,23 +62,26 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 dataField = new String[] {"userLogin", "userPass"};
             }
 
-            int i;
-            for (i = 0; i < dataField.length; i++) {
-                data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
-                if (i < dataField.length - 1) {
-                    data += "&";
+            if (dataField != null) {
+                int i;
+                for (i = 0; i < dataField.length; i++) {
+                    data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
+                    if (i < dataField.length - 1) {
+                        data += "&";
+                    }
                 }
+
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
             }
 
-            bufferedWriter.write(data);
-            bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
 
             InputStream inputStream = httpURLConnection.getInputStream();
 
-            if (method.equals("login")) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+            if (method.equals("login") || method.equals("recup_country")) {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
 
                 String response = "";
                 String line;
