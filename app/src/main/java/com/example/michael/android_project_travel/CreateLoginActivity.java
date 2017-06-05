@@ -1,14 +1,12 @@
 package com.example.michael.android_project_travel;
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
-import bddRequest.BackgroundTask;
+import tools.AlterteMessage;
 
 public class CreateLoginActivity extends AppCompatActivity {
 
@@ -41,23 +39,11 @@ public class CreateLoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle("Alerte");
-                        builder.setMessage("Les mots de passes ne sont pas identiques !");
-                        builder.setCancelable(true);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert);
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
+                        new AlterteMessage(this, "Les mots de passes ne sont pas identiques !");
                     }
                 }
                 else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Alerte");
-                    builder.setMessage("Veuillez entrer un mot de passe !");
-                    builder.setCancelable(true);
-                    builder.setIcon(android.R.drawable.ic_dialog_alert);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                    new AlterteMessage(this, "Veuillez entrer un mot de passe !");
                 }
                 break;
 

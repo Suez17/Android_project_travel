@@ -50,6 +50,9 @@ public class InscriptionActivity extends AppCompatActivity {
                 String method = "register";
                 BackgroundTask backgroundTask = new BackgroundTask(this);
                 backgroundTask.execute(method, nom, prenom, age, phone, ville, email, login, pass);
+
+                intent = new Intent(this, AccueilActivity.class);
+                startActivity(intent);
                 finish();
                 break;
 
