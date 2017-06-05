@@ -18,6 +18,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import tools.AlterteMessage;
+
 /**
  * Created by fpite on 17/05/2017.
  */
@@ -36,71 +38,46 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String reg_url = "http://192.168.0.17:8080/testbdandroid/register.php";
-        String login_url = "http://192.168.0.17:8080/testbdandroid/login.php";
         String method = params[0];
+        String destinationUrl = "http://192.168.0.17:8080/testbdandroid/" + method + ".php";
 
-        if (method.equals("register")) {
-            try {
-                URL url = new URL(reg_url);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoOutput(true);
-                //httpURLConnection.setDoInput(true);
+        try {
+            URL url = new URL(destinationUrl);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setDoOutput(true);
+            httpURLConnection.setDoInput(true);
 
-                OutputStream OS = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
 
-                String[] dataField = {"userLastname", "userFirstname", "userAge", "userPhone", "userCity", "userMail", "userLogin", "userPass"};
+            String[] dataField = null;
+            String data = "";
 
-                String data = "";
-                int i;
-                for (i = 0; i < dataField.length; i++) {
-                    data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
-                    if (i < dataField.length - 1) {
-                        data += "&";
-                    }
+            if (method.equals("register")) {
+                dataField = new String[] {"userLastname", "userFirstname", "userAge", "userPhone", "userCity", "userMail", "userLogin", "userPass"};
+            }
+
+            else if (method.equals("login")) {
+                dataField = new String[] {"userLogin", "userPass"};
+            }
+
+            int i;
+            for (i = 0; i < dataField.length; i++) {
+                data += URLEncoder.encode(dataField[i], "UTF-8") + "=" + URLEncoder.encode(params[i + 1], "UTF-8");
+                if (i < dataField.length - 1) {
+                    data += "&";
                 }
-
-                bufferedWriter.write(data);
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                OS.close();
-                InputStream IS = httpURLConnection.getInputStream();
-                IS.close();
-                //httpURLConnection.connect();
-                httpURLConnection.disconnect();
-                return "Registration Success...";
             }
 
-            catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+            bufferedWriter.write(data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            outputStream.close();
 
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+            InputStream inputStream = httpURLConnection.getInputStream();
 
-        else if (method.equals("login")) {
-            try {
-                URL url = new URL(login_url);
-                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setDoInput(true);
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-
-                String data = URLEncoder.encode("userLogin","UTF-8") + "=" + URLEncoder.encode(params[1], "UTF-8") + "&" +
-                        URLEncoder.encode("userPass","UTF-8") + "=" +  URLEncoder.encode(params[2], "UTF-8");
-
-                bufferedWriter.write(data);
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                outputStream.close();
-
-                InputStream inputStream = httpURLConnection.getInputStream();
+            if (method.equals("login")) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
 
                 String response = "";
@@ -116,14 +93,21 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 return response;
             }
 
-            catch (MalformedURLException e) {
-                e.printStackTrace();
+            else {
+                inputStream.close();
             }
 
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+            httpURLConnection.disconnect();
         }
+
+        catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 
