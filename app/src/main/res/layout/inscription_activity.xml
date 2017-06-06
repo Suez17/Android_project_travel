@@ -32,7 +32,7 @@
         android:text="Prénom"
         android:layout_alignBaseline="@+id/prenomText"
         android:layout_alignBottom="@+id/prenomText"
-        android:layout_alignStart="@+id/nomLabel" />
+        android:layout_alignEnd="@+id/nomLabel" />
 
     <TextView
         android:id="@+id/telephoneLabel"
@@ -41,7 +41,7 @@
         android:text="Mobile"
         android:layout_alignBaseline="@+id/phoneText"
         android:layout_alignBottom="@+id/phoneText"
-        android:layout_alignStart="@+id/mdpLabel" />
+        android:layout_alignEnd="@+id/nomLabel" />
 
     <Button
         android:id="@+id/validerInscription"
@@ -52,15 +52,16 @@
         android:layout_below="@+id/radioParticulier"
         android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
 
     <TextView
         android:id="@+id/villeLibelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ville"
-        android:layout_alignBaseline="@+id/editText13"
-        android:layout_alignBottom="@+id/editText13"
+        android:layout_alignBaseline="@+id/villeText"
+        android:layout_alignBottom="@+id/villeText"
         android:layout_alignStart="@+id/telephoneLabel" />
 
     <TextView
@@ -103,7 +104,7 @@
         android:layout_alignStart="@+id/ageText" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/villeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -117,26 +118,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:layout_below="@+id/editText13"
-        android:layout_alignStart="@+id/editText13" />
-
-    <TextView
-        android:id="@+id/mdpLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mdp"
-        android:layout_alignBaseline="@+id/mdpText"
-        android:layout_alignBottom="@+id/mdpText"
-        android:layout_alignEnd="@+id/nomLabel" />
-
-    <EditText
-        android:id="@+id/mdpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_below="@+id/emailText"
-        android:layout_alignStart="@+id/emailText" />
+        android:layout_below="@+id/villeText"
+        android:layout_alignStart="@+id/villeText" />
 
     <RadioButton
         android:id="@+id/radioParticulier"
@@ -144,8 +127,8 @@
         android:layout_height="wrap_content"
         android:text="Particulier"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/mdpText"
-        android:layout_alignStart="@+id/mdpLabel" />
+        android:layout_below="@+id/emailText"
+        android:layout_alignStart="@+id/emailLabel" />
 
     <RadioButton
         android:id="@+id/radioProfessionnel"
@@ -154,7 +137,7 @@
         android:text="Professionnel"
         android:layout_alignBaseline="@+id/radioParticulier"
         android:layout_alignBottom="@+id/radioParticulier"
-        android:layout_alignEnd="@+id/mdpText" />
+        android:layout_alignEnd="@+id/emailText" />
 
     <TextView
         android:id="@+id/ageLabel"
@@ -163,7 +146,7 @@
         android:text="Age"
         android:layout_alignBaseline="@+id/ageText"
         android:layout_alignBottom="@+id/ageText"
-        android:layout_alignStart="@+id/prenomLabel" />
+        android:layout_alignStart="@+id/telephoneLabel" />
 
     <EditText
         android:id="@+id/ageText"
@@ -182,6 +165,7 @@
         android:text="RETOUR"
         android:layout_below="@+id/validerInscription"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />
 
 </RelativeLayout>
