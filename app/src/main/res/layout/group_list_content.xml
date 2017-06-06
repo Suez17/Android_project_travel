@@ -8,29 +8,28 @@
         android:id="@+id/nomGroupeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.25"
+        android:layout_weight="0.24"
         android:text="Nom groupe" />
 
     <TextView
         android:id="@+id/nombreMembreText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.24"
-        android:text="Nombre de membres" />
+        android:layout_weight="0.25"
+        android:text="Destination" />
 
     <TextView
-        android:id="@+id/dureeVoyageText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.23"
-        android:text="DureeVoyage" />
-
-    <Button
-        android:id="@+id/rejoindreButton"
+        android:id="@+id/dateDebut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.26"
-        android:background="@color/colorGreen"
-        android:text="REJOINDRE" />
+        android:text="Date début " />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.22"
+        android:text="Date fin" />
 
 </LinearLayout>
