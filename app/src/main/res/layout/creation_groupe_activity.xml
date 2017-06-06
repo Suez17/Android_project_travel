@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date début"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/dateFin"
         android:layout_alignStart="@+id/destinationLabel"
         android:layout_marginBottom="26dp" />
 
@@ -108,7 +108,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:background="@color/colorGreen"
-        android:text="CREER GROUPE" />
+        android:text="CREER GROUPE"
+        android:onClick="onClick" />
 
     <Button
         android:id="@+id/retourButton"
@@ -119,10 +120,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp"
         android:background="@color/colorRed"
-        android:text="RETOUR" />
+        android:text="RETOUR"
+        android:onClick="onClick" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/dateDebut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -136,16 +138,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date fin"
-        android:layout_alignBaseline="@+id/editText2"
-        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignBaseline="@+id/dateFin"
+        android:layout_alignBottom="@+id/dateFin"
         android:layout_alignStart="@+id/dateDebutLabel" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/dateFin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignStart="@+id/dateDebut" />
 </RelativeLayout>

@@ -7,8 +7,8 @@ import android.support.v7.app.AlertDialog;
  * Created by Michael on 05/06/2017.
  */
 
-public class AlterteMessage {
-    public AlterteMessage(Context context, String message) {
+public class AlerteMessage {
+    public AlerteMessage(Context context, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Alerte");
         builder.setMessage(message);

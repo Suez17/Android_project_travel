@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import tools.AlterteMessage;
+import tools.AlerteMessage;
 
 public class CreateLoginActivity extends AppCompatActivity {
 
@@ -39,11 +39,11 @@ public class CreateLoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        new AlterteMessage(this, "Les mots de passes ne sont pas identiques !");
+                        new AlerteMessage(this, "Les mots de passes ne sont pas identiques !");
                     }
                 }
                 else {
-                    new AlterteMessage(this, "Veuillez entrer un mot de passe !");
+                    new AlerteMessage(this, "Veuillez entrer un mot de passe !");
                 }
                 break;
 

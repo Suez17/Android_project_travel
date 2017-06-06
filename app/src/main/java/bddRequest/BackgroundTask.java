@@ -1,10 +1,7 @@
 package bddRequest;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -17,8 +14,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-
-import tools.AlterteMessage;
 
 /**
  * Created by fpite on 17/05/2017.
@@ -39,7 +34,18 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String method = params[0];
-        String destinationUrl = "http://192.168.0.17:8080/testbdandroid/" + method + ".php";
+
+        /*String IpAdress = "";
+        try {
+            InetAddress thisIp = InetAddress.getLocalHost();
+            IpAdress = thisIp.getHostAddress();
+        } catch(UnknownHostException e) {
+                e.printStackTrace();
+        }
+
+        System.out.println("ADRESSE : " + IpAdress);*/
+
+        String destinationUrl = "http://172.19.1.57/testbdandroid/" + method + ".php";
 
         try {
             URL url = new URL(destinationUrl);
@@ -62,6 +68,10 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 dataField = new String[] {"userLogin", "userPass"};
             }
 
+            else if (method.equals("create_group")) {
+                dataField = new String[] {"groupName", "groupDestination", "startDate", "endDate", "groupMaxMembers"};
+            }
+
             if (dataField != null) {
                 int i;
                 for (i = 0; i < dataField.length; i++) {
@@ -81,13 +91,13 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
             InputStream inputStream = httpURLConnection.getInputStream();
 
             if (method.equals("login") || method.equals("recup_country")) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8")); //iso-8859-1
 
                 String response = "";
                 String line;
 
                 while ((line = bufferedReader.readLine()) != null) {
-                    response+= line;
+                    response += line.trim();
                 }
 
                 bufferedReader.close();

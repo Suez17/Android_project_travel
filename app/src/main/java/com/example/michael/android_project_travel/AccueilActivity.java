@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import tools.AlerteMessage;
 
 public class AccueilActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -92,11 +93,10 @@ public class AccueilActivity extends AppCompatActivity
         } else if (id == R.id.nav_messagerie) {
 
         } else if (id == R.id.nav_deconnexion) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            new AlerteMessage(this, "Vous vous êtes bien deconnecté");
+            intent = new Intent(this, ConnexionActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

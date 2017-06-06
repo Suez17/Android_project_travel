@@ -1,14 +1,13 @@
 package com.example.michael.android_project_travel;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import bddRequest.BackgroundTask;
-import tools.AlterteMessage;
+import tools.AlerteMessage;
 
 /**
  * Created by Isidore on 18/05/2017.
@@ -39,13 +38,13 @@ public class ConnexionActivity extends AppCompatActivity {
                 backgroundTask.execute(method, login, pass);
                 String requestResult = backgroundTask.get().toString();
 
-                if (requestResult.equals("  1  ")) {
+                if (requestResult.equals("1")) {
                     intent = new Intent(this, AccueilActivity.class);
                     startActivity(intent);
                     finish();
                 }
                 else {
-                    new AlterteMessage(this, "Le login ou le mot de passe est incorrect !");
+                    new AlerteMessage(this, "Le login ou le mot de passe est incorrect !");
                 }
 
                 break;
