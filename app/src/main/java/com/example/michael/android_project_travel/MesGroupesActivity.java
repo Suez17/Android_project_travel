@@ -24,6 +24,12 @@ public class MesGroupesActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+
+            case R.id.rechercherButton :
+                intent = new Intent(this, RechercheGroupe.class);
+                startActivity(intent);
+                finish();
+                break;
         }
     }
 }
