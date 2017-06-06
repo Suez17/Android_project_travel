@@ -1,8 +1,13 @@
 package com.example.michael.android_project_travel;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.braunster.androidchatsdk.firebaseplugin.firebase.BChatcatNetworkAdapter;
+import com.braunster.chatsdk.Utils.helper.ChatSDKUiHelper;
+import com.braunster.chatsdk.activities.ChatSDKLoginActivity;
+import com.braunster.chatsdk.network.BNetworkManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,7 +15,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.inscription_activity);
-        startActivity(new Intent(this, ConnexionActivity.class));
-        finish();
+        //startActivity(new Intent(this, ConnexionActivity.class));
+        //finish();
+        // This is used for the app custom toast and activity transition
+        ChatSDKUiHelper.initDefault();
+
+// Init the network manager
+        BNetworkManager.init(getApplicationContext());
+
+// Create a new adapter
+        BChatcatNetworkAdapter adapter = new BChatcatNetworkAdapter(getApplicationContext());
+
+// Set the adapter
+        BNetworkManager.sharedManager().setNetworkAdapter(adapter);
+
+        Intent myIntent = new Intent(this, ChatSDKLoginActivity.class);
+        startActivity(myIntent);
     }
 }

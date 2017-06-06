@@ -8,5 +8,5 @@
         app:showAsAction="never" />
     <item
         android:orderInCategory="101"
-        android:title="help" />
+        android:title="Help" />
 </menu>
