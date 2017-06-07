@@ -38,8 +38,9 @@ public class ConnexionActivity extends AppCompatActivity {
                 backgroundTask.execute(method, login, pass);
                 String requestResult = backgroundTask.get().toString();
 
-                if (requestResult.equals("1")) {
+                if (!requestResult.equals("0")) {
                     intent = new Intent(this, AccueilActivity.class);
+                    intent.putExtra("idUser", requestResult);
                     startActivity(intent);
                     finish();
                 }

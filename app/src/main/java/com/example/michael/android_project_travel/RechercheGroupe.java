@@ -54,10 +54,6 @@ public class RechercheGroupe extends AppCompatActivity {
                 String requestResult = backgroundTask.get().toString();
 
                 if (!requestResult.equals("0")) {
-                    /*String[] element = requestResult.split("/");
-                    for (int i = 0; i < element.length; i++) {
-                        new AlerteMessage(this, element[i]);
-                    }*/
                     intent = new Intent(this, SearchResultActivity.class);
                     intent.putExtra("groupsInfo", requestResult);
                     startActivity(intent);
@@ -66,10 +62,6 @@ public class RechercheGroupe extends AppCompatActivity {
                 else {
                     new AlerteMessage(this, "Aucun groupe ne correspond à votre recherche");
                 }
-
-                /*intent = new Intent(this, MesGroupesActivity.class);
-                startActivity(intent);
-                finish();*/
                 break;
 
             case R.id.backButton :

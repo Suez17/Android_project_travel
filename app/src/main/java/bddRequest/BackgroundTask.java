@@ -69,7 +69,7 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
             }
 
             else if (method.equals("create_group")) {
-                dataField = new String[] {"groupName", "groupDestination", "startDate", "endDate", "groupMaxMembers"};
+                dataField = new String[] {"groupName", "groupDestination", "startDate", "endDate", "groupMaxMembers", "idUser"};
             }
 
             else if (method.equals("search_group")) {

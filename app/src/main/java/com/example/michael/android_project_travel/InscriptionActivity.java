@@ -51,7 +51,7 @@ public class InscriptionActivity extends AppCompatActivity {
                 BackgroundTask backgroundTask = new BackgroundTask(this);
                 backgroundTask.execute(method, nom, prenom, age, phone, ville, email, login, pass);
 
-                intent = new Intent(this, AccueilActivity.class);
+                intent = new Intent(this, ConnexionActivity.class);
                 startActivity(intent);
                 finish();
                 break;

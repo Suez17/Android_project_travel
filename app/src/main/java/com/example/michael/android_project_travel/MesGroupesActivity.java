@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import bddRequest.BackgroundTask;
+import tools.AlerteMessage;
 
 public class MesGroupesActivity extends AppCompatActivity {
 
@@ -21,12 +22,14 @@ public class MesGroupesActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.ajouterGroupe :
                 intent = new Intent(this, CreationGroupeActivity.class);
+                intent.putExtra("idUser", getIntent().getStringExtra("idUser"));
                 startActivity(intent);
                 finish();
                 break;
 
             case R.id.rechercherButton :
                 intent = new Intent(this, RechercheGroupe.class);
+                intent.putExtra("idUser", getIntent().getStringExtra("idUser"));
                 startActivity(intent);
                 finish();
                 break;

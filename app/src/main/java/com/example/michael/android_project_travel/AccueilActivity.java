@@ -87,6 +87,7 @@ public class AccueilActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_groupe) {
             intent = new Intent(this, MesGroupesActivity.class);
+            intent.putExtra("idUser", getIntent().getStringExtra("idUser"));
             startActivity(intent);
             finish();
 

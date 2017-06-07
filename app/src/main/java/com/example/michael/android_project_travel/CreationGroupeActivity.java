@@ -48,9 +48,11 @@ public class CreationGroupeActivity extends AppCompatActivity {
                 String dateFin = getDateFin.getText().toString();
                 String nbVoyageurs = getNbVoyageurs.getText().toString();
 
+                String idUser = getIntent().getStringExtra("idUser");
+
                 String method = "create_group";
                 BackgroundTask backgroundTask = new BackgroundTask(this);
-                backgroundTask.execute(method, nomGroupe, destination, dateDebut, dateFin, nbVoyageurs);
+                backgroundTask.execute(method, nomGroupe, destination, dateDebut, dateFin, nbVoyageurs, idUser);
 
                 intent = new Intent(this, MesGroupesActivity.class);
                 startActivity(intent);
