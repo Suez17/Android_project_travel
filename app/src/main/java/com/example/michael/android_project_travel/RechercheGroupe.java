@@ -31,10 +31,10 @@ public class RechercheGroupe extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        getDestination = (Spinner) findViewById(R.id.destinationCombo);
-        getDateDebut = (EditText) findViewById(R.id.dateDebut);
-        getDateFin = (EditText) findViewById(R.id.dateFin);
-        getNbVoyageurs = (EditText) findViewById(R.id.nbVoyageurText);
+        getDestination = (Spinner) findViewById(R.id.paysList);
+        getDateDebut = (EditText) findViewById(R.id.dateDebutText);
+        getDateFin = (EditText) findViewById(R.id.dateFinText);
+        getNbVoyageurs = (EditText) findViewById(R.id.nbParticipantsText);
     }
 
     public void onClick(View v) throws Throwable {
@@ -54,7 +54,14 @@ public class RechercheGroupe extends AppCompatActivity {
                 String requestResult = backgroundTask.get().toString();
 
                 if (!requestResult.equals("0")) {
-                    new AlerteMessage(this, requestResult);
+                    /*String[] element = requestResult.split("/");
+                    for (int i = 0; i < element.length; i++) {
+                        new AlerteMessage(this, element[i]);
+                    }*/
+                    intent = new Intent(this, SearchResultActivity.class);
+                    intent.putExtra("groupsInfo", requestResult);
+                    startActivity(intent);
+                    finish();
                 }
                 else {
                     new AlerteMessage(this, "Aucun groupe ne correspond à votre recherche");

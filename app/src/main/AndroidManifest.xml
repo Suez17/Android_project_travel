@@ -78,7 +78,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateLoginActivity"></activity>
+        <activity android:name=".CreateLoginActivity" />
+        <activity android:name=".SearchResultActivity"></activity>
     </application>
 
 </manifest>
