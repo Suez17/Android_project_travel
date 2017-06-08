@@ -98,6 +98,10 @@ public class AccueilActivity extends AppCompatActivity
             intent = new Intent(this, ConnexionActivity.class);
             startActivity(intent);
             finish();
+        } else if (id == R.id.nav_outils) {
+            intent = new Intent(this, OutilsVoyageActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -76,6 +76,10 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 dataField = new String[] {"groupDestination", "startDate", "endDate", "groupMaxMembers"};
             }
 
+            else if (method.equals("recup_deviseRate")) {
+                dataField = new String[] {"devise"};
+            }
+
             if (dataField != null) {
                 int i;
                 for (i = 0; i < dataField.length; i++) {
@@ -94,7 +98,7 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
 
             InputStream inputStream = httpURLConnection.getInputStream();
 
-            if (method.equals("login") || method.equals("recup_country") || method.equals("search_group")) {
+            if (method.equals("login") || method.equals("recup_country") || method.equals("search_group") || method.equals("recup_devises") || method.equals("recup_deviseRate")) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8")); //iso-8859-1
 
                 String response = "";
