@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.michael.android_project_travel.RechercheGroupe">
+
+    <TextView
+        android:id="@+id/pageRechercherLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Rechercher un groupe de voyage"
+        android:textSize="26sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/fetchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen"
+        android:text="RECHERCHER"
+        android:layout_above="@+id/backButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="45dp"
+        android:text="RETOUR"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/destinationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Destination :"
+        android:layout_marginStart="28dp"
+        android:layout_below="@+id/pageRechercherLabel"
+        android:layout_alignStart="@+id/pageRechercherLabel" />
+
+    <Spinner
+        android:id="@+id/paysList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/destinationLabel"
+        android:layout_alignStart="@+id/dateDebutText"
+        android:layout_alignEnd="@+id/dateDebutText" />
+
+    <TextView
+        android:id="@+id/dateDebutLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/destinationLabel"
+        android:layout_below="@+id/paysList"
+        android:layout_marginTop="44dp"
+        android:text="Date début :" />
+
+    <TextView
+        android:id="@+id/dureeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durée :"
+        android:layout_alignBaseline="@+id/dureeText"
+        android:layout_alignBottom="@+id/dureeText"
+        android:layout_alignStart="@+id/dateFinLabel" />
+
+    <EditText
+        android:id="@+id/dureeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/dateFinText"
+        android:layout_alignStart="@+id/dateFinText"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/participantsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Participants"
+        android:layout_alignBaseline="@+id/nbParticipantsText"
+        android:layout_alignBottom="@+id/nbParticipantsText"
+        android:layout_alignStart="@+id/dureeLabel" />
+
+    <EditText
+        android:id="@+id/nbParticipantsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/dureeText"
+        android:layout_alignStart="@+id/dureeText" />
+
+    <EditText
+        android:id="@+id/dateDebutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_alignBaseline="@+id/dateDebutLabel"
+        android:layout_alignBottom="@+id/dateDebutLabel"
+        android:layout_alignEnd="@+id/pageRechercherLabel"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:id="@+id/dateFinLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dateDebutLabel"
+        android:layout_below="@+id/dateDebutText"
+        android:layout_marginTop="24dp"
+        android:text="Date fin :" />
+
+    <EditText
+        android:id="@+id/dateFinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dateFinLabel"
+        android:layout_alignBottom="@+id/dateFinLabel"
+        android:layout_alignStart="@+id/dateDebutText"
+        android:ems="10"
+        android:inputType="date" />
+
+</RelativeLayout>

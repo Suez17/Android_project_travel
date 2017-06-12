@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.michael.android_project_travel.InscriptionActivity">
+
+    <TextView
+        android:id="@+id/inscritpionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inscription"
+        android:textSize="36sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/nomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="28dp"
+        android:text="Nom"
+        android:layout_below="@+id/inscritpionLabel"
+        android:layout_toStartOf="@+id/nomText" />
+
+    <TextView
+        android:id="@+id/prenomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prénom"
+        android:layout_alignBaseline="@+id/prenomText"
+        android:layout_alignBottom="@+id/prenomText"
+        android:layout_alignEnd="@+id/nomLabel" />
+
+    <TextView
+        android:id="@+id/telephoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:layout_alignBaseline="@+id/phoneText"
+        android:layout_alignBottom="@+id/phoneText"
+        android:layout_alignEnd="@+id/nomLabel" />
+
+    <Button
+        android:id="@+id/validerInscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VALIDER"
+        android:background="@color/colorGreen"
+        android:layout_below="@+id/radioParticulier"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/villeLibelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ville"
+        android:layout_alignBaseline="@+id/villeText"
+        android:layout_alignBottom="@+id/villeText"
+        android:layout_alignStart="@+id/telephoneLabel" />
+
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_alignBaseline="@+id/emailText"
+        android:layout_alignBottom="@+id/emailText"
+        android:layout_alignEnd="@+id/telephoneLabel"
+        android:layout_alignStart="@+id/villeLibelle" />
+
+    <EditText
+        android:id="@+id/nomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/nomLabel"
+        android:layout_alignBottom="@+id/nomLabel"
+        android:layout_alignStart="@+id/inscritpionLabel" />
+
+    <EditText
+        android:id="@+id/prenomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/nomText"
+        android:layout_alignStart="@+id/nomText" />
+
+    <EditText
+        android:id="@+id/phoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_marginTop="22dp"
+        android:layout_alignTop="@+id/ageLabel"
+        android:layout_alignStart="@+id/ageText" />
+
+    <EditText
+        android:id="@+id/villeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/phoneText"
+        android:layout_alignStart="@+id/phoneText" />
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/villeText"
+        android:layout_alignStart="@+id/villeText" />
+
+    <RadioButton
+        android:id="@+id/radioParticulier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Particulier"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/emailText"
+        android:layout_alignStart="@+id/emailLabel" />
+
+    <RadioButton
+        android:id="@+id/radioProfessionnel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professionnel"
+        android:layout_alignBaseline="@+id/radioParticulier"
+        android:layout_alignBottom="@+id/radioParticulier"
+        android:layout_alignEnd="@+id/emailText" />
+
+    <TextView
+        android:id="@+id/ageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:layout_alignBaseline="@+id/ageText"
+        android:layout_alignBottom="@+id/ageText"
+        android:layout_alignStart="@+id/telephoneLabel" />
+
+    <EditText
+        android:id="@+id/ageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/prenomText"
+        android:layout_alignStart="@+id/prenomText" />
+
+    <Button
+        android:id="@+id/retourButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:text="RETOUR"
+        android:layout_below="@+id/validerInscription"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />
+
+</RelativeLayout>
